@@ -1,3 +1,3 @@
 # Ogrong-Web
 Minecraft ogrong server web
-www.https://www.ogrong.com/
+https://www.ogrong.com/
