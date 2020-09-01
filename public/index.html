@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="mango.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Ogrong-Skyland</title>
+    <link href="https://fonts.googleapis.com/css?family=Prompt&display=swap" rel="stylesheet">
+  
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/7.11.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.11.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.11.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.11.0/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.11.0/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+    <style media="screen">
+      body{
+        font-family: 'Prompt', sans-serif;
+        background-color: #c5c5c5;
+        
+      }
+      .status{
+        background-color: #e3e6e8;
+        width: 20vw;
+        padding: 10px;
+      }
+      .status-color{
+        color: limegreen;
+      }
+      .news{
+        text-align: center;
+      }
+      .carousel-item{
+        height: 100vh;
+        background: no-repeat center center scroll;
+        background-size: cover;
+      }
+      .w-100{
+        height: 100vh;
+      }
+      @media only screen and (max-width: 767px){
+        .navbar-nav.ml-auto{
+          background: rgba(0, 0, 0, 0.5);
+        }
+        .navbar-toggler{
+          padding: 1px 5px;
+          background:#fff ;
+        }
+        .nav-link{
+          background-color: rgba(0, 0 0, 0.5);
+          text-align: center;
+          
+        }
+        .bounceInUp{
+          font-size: 2rem;
+          
+        }
+        h5.bounceInUp{
+          font-size: 1rem;
+        }
+        
+
+      }
+      .navbar-light .navbar-nav .nav-link {
+          color: white;
+      }
+      .navbar-toggler{
+          background-color: white;
+      }
+      .carousel-caption{
+        bottom: 40vh;
+        font-size: 60px;
+        margin-top:25px; 
+      }
+     
+      @-webkit-keyframes bounceInUp {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 3000px, 0);
+    transform: translate3d(0, 3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0, -5px, 0);
+    transform: translate3d(0, -5px, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes bounceInUp {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 3000px, 0);
+    transform: translate3d(0, 3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0, -5px, 0);
+    transform: translate3d(0, -5px, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.bounceInUp {
+  -webkit-animation-name: bounceInUp;
+  animation-name: bounceInUp;
+  animation-duration: 2s;
+}
+
+@-webkit-keyframes bounceOut {
+  20% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+
+  50%,
+  55% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+}
+footer{
+  background-color: #a0a0a0;
+}
+.statuspic{
+  width: 234px;
+  height: 29px;
+  background-position:bottom;
+  border-radius: 5px; 
+}     
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"><img src="text1.png" style="width: 200px;"></a>
+    
+      <div class="collapse navbar-collapse" id="navbarToggler">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">เกี่ยวกับ <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="topup.html">เติมเงิน</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#event">กิจกรรม</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="permission.html">ยศ</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active" style="background-image: url(mainimg.png);">
+          <div class="carousel-caption text-center">
+            <h5 class="bounceInUp "> Ogrong-Skyland</h5>
+            <p class="bounceInUp ">ยินดีต้อนรับเข้าสู่ดินแดนแห่งเสรีภาพ</p>
+          </div>
+        </div>
+        <div class="carousel-item" style="background-image: url(path1.png);">         
+          <div class="carousel-caption text-center">
+            <h5 class="bounceInUp ">PVP ZONE</h5>
+            <p class="bounceInUp ">โซนที่สามารถต่อสู้ได้อย่างอิสระ และมีเควสให้ทำอยู่มากมาย</p>
+          </div>
+        </div>
+        <div class="carousel-item" style="background-image: url(boatmorning.png);">
+          <div class="carousel-caption text-center">
+            <h5 class="bounceInUp ">Ogrong-Skyland</h5>
+            <p class="bounceInUp ">การเดินทางที่ไม่มีสิ้นสุด และกิจกรรมอีกมากมาย</p>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <br>
+   
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <div class="card bg-light mb-3" style="max-width: 18rem;">
+            <div class="card-header">สถานะเซิฟเวอร์ <div class="spinner-grow text-success" role="status">
+              <span class="sr-only">Loading...</span>
+            </div></div>
+            <div class="card-body">
+          IP: mc.ogrong.com<br>
+          Version: 1.15.2<br><br>
+          
+          <div class="statuspic" style="background-image: url(https://minecraft-mp.com/half-banner-247627-3.png);"></div>
+
+          </div>
+          </div> 
+          
+          
+        </div>
+        
+        <div class="col-sm">
+          
+          <table class="table table-striped">
+            
+              <tr>
+                <h4 class="news">ข่าวสาร</h4>
+                
+              </tr>
+            
+            <thead>
+              <tr>
+                <th scope="col">ลำดับ</th>
+                <th scope="col">ประกาศ</th>
+                <th scope="col">วันที่</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td><span class="badge badge-pill badge-success">ประกาศ</span> เปิดเซิฟเวอร์อย่างเป็นทางการ</td>
+                <td>16/3/2020</td>
+                
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td><span class="badge badge-pill badge-success">ประกาศ</span> ปิดปรับปรุงเวลาเที่ยงคืน</td>
+                <td>17/3/2020</td>
+                
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td><span class="badge badge-pill badge-success">ประกาศ</span> ปิดปรับปรุงเวลา18:00</td>
+                <td>20/3/2020</td>
+                
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td><span class="badge badge-pill badge-success">ประกาศ</span> สิ้นสุดการปิดปรับปรุงเซิฟเวอร์</td>
+                <td>1/4/2020</td>
+                
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td><span class="badge badge-pill badge-warning">อัปเดต</span> เกาะSUMMER BEACH สามารถไปได้แล้ว</td>
+                <td>31/5/2020</td>
+                
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+          
+        <div class="row">
+          <div class="col-sm">
+            <div class="card bg-light mb-3" style="max-width: 18rem;">
+              <div class="card-header">TOP DONATE</div>
+              <div class="card-body">
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>
+                      <th scope="row">อันดับ1</th>
+                      <td>PsyNkn</td>
+                      <td>600บาท</td>
+
+                    </tr>
+                    <tr>
+                      <th scope="row">อันดับ2</th>
+                      <td>gsp</td>
+                      <td>600บาท</td>
+                    
+                    </tr>
+                    <tr>
+                      <th scope="row">อันดับ3</th>
+                      <td>Spector_k</td>
+                      <td>400บาท</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+      
+          <div class="col-sm">
+            <!-- one -->
+          </div>
+          
+        </div>
+          <div class="row">
+            <div class="col-sm">
+              <div class="card bg-light mb-3" style="max-width: 18rem;">
+                <div class="card-header">facebook</div>
+                <div class="card-body">
+                  <div class="fb-page" data-href="https://www.facebook.com/mc.ogrong" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/mc.ogrong" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/mc.ogrong">Ogrong Skyland</a></blockquote></div>
+                  
+                </div>
+              </div>
+            </div>
+            
+            
+            <div class="col-sm">
+            <div id="event"></div>
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">กิจกรรม</h5>
+                  <p class="card-text">Coming Soon</p>
+                  <p class="card-text"><small class="text-muted">วันที่ - - -</small></p>
+                </div>
+                <img src="Minecraft.jpg" class="card-img-top" alt="Event Pic">
+              </div>
+              </div>
+            </div>
+          </div>
+        
+        
+      
+      
+      
+    
+          
+
+        </div >
+        </div>
+      </div>
+    </div>
+    
+<!-- Footer -->
+<footer class="page-footer font-small stylish-color-dark pt-4">
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-4 mx-auto">
+
+        <!-- Content -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Ogrong Skyland</h5>
+        <p>อย่าลืมเข้ามาเป็นส่วนหนึ่งกับพวกเรา ชาวมะม่วง ร่วมสนุกกับกิจกรรมที่สนุกสนานมากมายภายในเซิฟเวอร์ แอดมินเป็นกันเอง และเพื่อนๆภายในที่รอคุณอยู่อีกมากมาย</p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">หาอะไรอยู่</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="about.html">เกี่ยวกับ</a>
+          </li>
+          <li>
+            <a href="topup.html">เติมเงิน</a>
+          </li>
+          <li>
+            <a href="https://forms.gle/LKcL7v5TpFL9qxrS7">แจ้งการเติมเงิน</a>
+          </li>
+          <li>
+            <a href="#event">กิจกรรม</a>
+          </li>
+          <li>
+            <a href="permission.html">ยศ</a>
+          </li>
+        </ul>
+
+      </div>
+             
+
+    </div>
+   
+
+  </div>
+  <div class="footer-copyright text-center py-3">© 2020 Copyright ogrong.com.All rights reserved.
+    
+  </div>
+  
+
+
+</footer>
+
+  
+    
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v6.0"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+  </body>
+</html>

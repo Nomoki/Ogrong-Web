@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="mango.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Ogrong-Skyland | Top up</title>
+    <link href="https://fonts.googleapis.com/css?family=Prompt&display=swap" rel="stylesheet">
+  
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/7.11.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.11.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.11.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.11.0/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.11.0/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+    <style media="screen">
+      body{
+        font-family: 'Prompt', sans-serif;
+        background-color: #c5c5c5;
+        
+      }
+      h1{
+        color: #616163;
+      }
+      .status{
+        background-color: #e3e6e8;
+        width: 20vw;
+        padding: 10px;
+      }
+      .status-color{
+        color: limegreen;
+      }
+      .news{
+        text-align: center;
+      }
+      .carousel-item{
+        height: 100vh;
+        background: no-repeat center center scroll;
+        background-size: cover;
+      }
+      .w-100{
+        height: 100vh;
+      }
+      @media only screen and (max-width: 767px){
+        .navbar-nav.ml-auto{
+          background: rgba(0, 0, 0, 0.5);
+        }
+        .navbar-toggler{
+          padding: 1px 5px;
+          background:#fff ;
+        }
+        .nav-link{
+          background-color: rgba(0, 0 0, 0.5);
+          text-align: center;
+          
+        }
+        .bounceInUp{
+          font-size: 2rem;
+          
+        }
+        h5.bounceInUp{
+          font-size: 1rem;
+        }
+
+      }
+      .navbar-light .navbar-nav .nav-link {
+          color: white;
+      }
+      .navbar-toggler{
+          background-color: white;
+      }
+      .carousel-caption{
+        bottom: 40vh;
+        font-size: 60px;
+        margin-top:25px; 
+      }
+     
+      @-webkit-keyframes bounceInUp {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 3000px, 0);
+    transform: translate3d(0, 3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0, -5px, 0);
+    transform: translate3d(0, -5px, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes bounceInUp {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 3000px, 0);
+    transform: translate3d(0, 3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0, -5px, 0);
+    transform: translate3d(0, -5px, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.bounceInUp {
+  -webkit-animation-name: bounceInUp;
+  animation-name: bounceInUp;
+  animation-duration: 2s;
+}
+
+@-webkit-keyframes bounceOut {
+  20% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+
+  50%,
+  55% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+}
+.bankimg{
+  border-radius: 50px;
+  width: 150px;
+}
+footer{
+  background-color: #a0a0a0;
+}
+   
+
+      
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"><img src="text1.png" style="width: 200px;"></a>
+    
+      <div class="collapse navbar-collapse" id="navbarToggler">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">เกี่ยวกับ <span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="topup.html">เติมเงิน</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">กิจกรรม</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="permission.html">ยศ</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active" style="background-image: url(island.png);">
+          <div class="carousel-caption text-center">
+            <h5 class="bounceInUp ">เกี่ยวกับ</h5>
+            <p class="bounceInUp ">ระบบต่างๆ</p>
+          </div>
+        </div>       
+      </div>
+    </div>
+    <br>
+    <div class="container">
+        <h3><strong>Sky Block</strong></h3>
+        <p><b>อะไรคือ Skyblock?</b></p>
+        <p>ถ้าหากเราพูดถึง Skyblock ทุกคนก็จะนึกถึงเกาะลอยฟ้ากันอย่างแน่นอน ซึ่งในอกร่อง เราจะมีเกาะ2เกาะให้ผู้เล่นได้สร้างสรรค์ และสำรวจ 
+        โดยจะมีที่กำเนิดหินให้ผู้เล่นตั้งแต่เริ่มต้น และสิ่งต่างๆที่สำคัญและจำเป็นต่อการใช้ชีวิตให้กับผู้เล่นได้ขยับขยายเกาะของตัวเอง นอกจากการสร้างสรรค์แล้ว
+        ยังมีระบบอัพเกรดต่างๆ ให้ผู้เล่นได้เลือกอัพเกรดตามกำลังทรัพย์ และยังมีระดับของเกาะที่แสดงให้ผู้เล่นทราบถึงระดับของเกาะ ซึ่งจะมีผลต่อการกำเนิดของแร่ ยิ่งมีระดับสูง
+        ก็จะทำให้ผู้เล่นนั้นหาแร่ได้ง่ายมากขึ้น โดยผู้เล่นจะสามารถใช้ชีวิต ได้อย่างอิสระไม่ว่าจะเป็นการชวนเพื่อนเข้ามาช่วยกันสร้างในเกาะหรือไปยี่ยมชมเกาะของผู้เล่นคนอื่นก็สามารถทำได้
+         โดยสามารถใช้คำสั่งต่างๆได้จากการ /is และเลือกกดคำสั่งที่ปรากฎขึ้นมา และ ผู้เล่นสามารถจัดการเกี่ยวกับเกาะของตัวเองได้จากหน้าต่างนี้</p>
+        <img src="island1.png" class="img-fluid" alt="Responsive image">
+        <br>
+        <br>
+        <h3><strong>Class</strong></h3>
+        <p><b>อะไรคือ ระบบClass?</b></p>
+        <p>Class System หรือ ระบบอาชีพ ที่ทำให้ผู้เล่นสามารถเลือกทำงานได้อย่างอิสระตามความต้องการของผู้เล่น เพื่อจะได้เงินจากการทำกิจกรรมต่างๆตามอาชีพที่ได้เลทอกไว้
+        เช่น เป็นคนตัดไม้ ก็จะได้เงินจากการตัดต้นไม้ และยังมีเลเวลของอาชีพที่บ่งบอกถึงความชำนาญในสายอาชีพนั้นๆ ยิ่งเลเวลสูงก็จะได้ค่าตอบแทนมากยิ่งขึ้น โดยผู้เล่นสามารถเลือกอาชีพได้
+    จากการ/is แล้วกดเลือกไปที่ขวานไม้ จะปรากฎหน้าต่างมาให้ผู้เล่นสามารถเลือกอาชีพได้อย่างอิสระ</p>
+    <img src="class.png" class="img-fluid" alt="Responsive image">
+    <br>
+    <br>
+    <h3><strong>Karma</strong></h3>
+        <p><b>อะไรคือ Karma?</b></p>
+        <p>Karma หรือ เรียกอีกอย่างว่า "ค่าความดี" ค่าที่จะบ่งบอกว่าผู้เล่นมีลักษณะเป็นอย่างไร โดยจะแสดงเป็นแถบสีอยู่ท้ายชื่อ หากเป็นสีแดงจะหมายถึงผู้เล่นคนนั้นเป็นคนไม่ดี
+            แต่หากเป็นสีฟ้าจะหมายถึงคนดี และสุดท้าย สีเริ่มต้นคือสีเทา คือคนธรรมดาที่ยังไม่ดีหรือร้าย โดยแต่ค่าความดีกับร้าย จะมี3ระดับ หากชื่อผู้เล่นเป็นสีแดงจะมีผลต่อการดรอปไอเทม
+            ของผู้เล่น ตามลำดับ แต่สีฟ้าอัตราการดรอปไอเทมจะปกติ แต่หากถูกฆ่า ค่าความดีของคน คนนั้นจะลดลงเยอะมาก
+        </p>
+        <img src="karma1.png" class="img-fluid" alt="Responsive image">
+
+        
+
+    </div>
+    
+    <br>
+    
+    
+<!-- Footer -->
+<footer class="page-footer font-small stylish-color-dark pt-4">
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-4 mx-auto">
+
+        <!-- Content -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Ogrong Skyland</h5>
+        <p>อย่าลืมเข้ามาเป็นส่วนหนึ่งกับพวกเรา ชาวมะม่วง ร่วมสนุกกับกิจกรรมที่สนุกสนานมากมายภายในเซิฟเวอร์ แอดมินเป็นกันเอง และเพื่อนๆภายในที่รอคุณอยู่อีกมากมาย</p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">หาอะไรอยู่</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="about.html">เกี่ยวกับ</a>
+          </li>
+          <li>
+            <a href="topup.html">เติมเงิน</a>
+          </li>
+          <li>
+            <a href="https://forms.gle/LKcL7v5TpFL9qxrS7">แจ้งการเติมเงิน</a>
+          </li>
+          <li>
+            <a href="index.html">กิจกรรม</a>
+          </li>
+          <li>
+            <a href="permission.html">ยศ</a>
+          </li>
+        </ul>
+
+      </div>
+             
+
+    </div>
+   
+
+  </div>
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    
+  </div>
+  
+
+
+</footer>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+  </body>
+</html>
